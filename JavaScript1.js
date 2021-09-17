@@ -23,11 +23,11 @@ botonagregar.addEventListener("click", (e) => {
         input.value = "";
     }
     else {
-        alert("gilipollas tenes valores vacios");     //Mensaje que sale cuando ponen valores vacios en el formulario
+        alert("valor vacio");     //Mensaje que sale cuando ponen valores vacios en el formulario
     }
 });
 
-function AgregarBotonDeBorrar() {                              //esa funcion crea un boton con una x cada vez que se crea un elemento
+function AgregarBotonDeBorrar() {                              //esa funcion crea un boton con una x para cada vez que se crea un elemento
     const botonborrar = document.createElement("button");
 
     botonborrar.textContent = "X";
