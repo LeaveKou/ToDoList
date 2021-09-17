@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <title>ToDoList</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    
+
+</head>
+<body>
+    <main class="maindiv">                                                            <!--clase del main "maindiv"(es como un section, un div en donde esta dentro todo el formulario)-->
+        <form id="formtodolist">                                                      <!--clase del formulario "formtodolist"-->
+            <h1>Cosas en la heladera</h1>
+            <div id="divform">
+                <label>Cosa a anotar</label>
+                <div class="divtextoform">
+                    <input required name="textoform" class="inputtextoform">          <!--clase del input "inputtextoform"-->
+                </div>
+            </div>
+            <div id="divform">
+                <label>Cantidad</label>  
+                <div id="divselectform">
+                    <select name="cantidad-form" class="cantidad-form">                <!--clase del select "cantidad-form"-->
+                        <option disabled hidden selected value="null">Selecciona...</option>
+                        <option>Hay</option>
+                        <option>Hay poco</option>
+                        <option>No hay</option>
+                    </select>
+                </div>
+            </div>
+            <button class="boton-agregar">Agregar</button>                           <!--clase del boton "boton-agregar"-->
+        </form>
+        <div class="divtabla">                                                      <!--clase del div que tiene al ul "divtabla"
+                                                                               (osea la lista en donde van saliendo las cosas que se agregan)-->  
+            <ul>
+                
+            </ul>
+        </div>
+        <script src="JavaScript1.js"></script>  <!--poralguna razon el script tiene que estar ahi abajo para que funque-->
+    </main>
+</body>
+</html>
