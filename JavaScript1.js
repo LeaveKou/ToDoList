@@ -1,4 +1,4 @@
-﻿const input = document.querySelector("input");
+const input = document.querySelector("input");
 const botonagregar = document.querySelector(".boton-agregar");                
 const ul = document.querySelector("ul");                       
 const $select = document.querySelector(".cantidad-form");        //query selector agarra valores del html 
@@ -11,23 +11,28 @@ botonagregar.addEventListener("click", (e) => {
     const opcionSeleccionada = $select.options[indice];
     const contenido2 = opcionSeleccionada.value;
 
-    if (contenido1 !== "" && contenido1 !== null && contenido2 !== "null") { //verificador
+    if (contenido1 !== "" && contenido1 !== null && contenido1.length <= 22 && contenido2 !== "null") { //verificador
         const li = document.createElement("li");
+        li.classList.add('container-li');
         const p = document.createElement("p");
-        p.textContent = contenido1 + " / " + contenido2;       // !!!!!!!!!!!!!!!!!! Contenido1 + " / " +  Contenido2 es lo que se muestra cuando
-                                                    // !!! Cargan un elemento, ejem,   (   Papas + /  + No Hay ), cambiar si lo quieren hacer mas facha 
+        p.classList.add('texto');
+        const p2 = document.createElement("p");
+        p.textContent = contenido1;
+        p2.textContent = contenido2;
         li.appendChild(p);
-        li.appendChild(AgregarBotonDeBorrar());  //
+        li.appendChild(p2);
+        li.appendChild(AgregarBotonDeBorrar()); //
         ul.appendChild(li);
 
         input.value = "";
     }
     else {
-        alert("valor vacio");     //Mensaje que sale cuando ponen valores vacios en el formulario
+        if (contenido1.length > 22) alert("Se exedio el limite de caracteres");
+        else alert("Hay valores vacios")//Mensaje que sale cuando ponen valores vacios en el formulario
     }
 });
 
-function AgregarBotonDeBorrar() {                              //esa funcion crea un boton con una x para cada vez que se crea un elemento
+function AgregarBotonDeBorrar() {                              //esa funcion crea un boton con una x cada vez que se crea un elemento
     const botonborrar = document.createElement("button");
 
     botonborrar.textContent = "X";
